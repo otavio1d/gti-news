@@ -1,6 +1,7 @@
 <?php
 
-use App\Models\User;
+use App\Models\Noticia;
+use App\Models\Tag;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -12,15 +13,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('noticas', function (Blueprint $table) {
+        Schema::create('tags', function (Blueprint $table) {
             $table->id();
-            $table->string('titulo');
-            $table->string('resumo');
-            $table->text('conteudo');
-            $table->date('date');
-            $table->string('capa');
-            $table->foreignIdFor(User::class)->constrained();
-
+            $table->string('nome');
             $table->timestamps();
         });
     }
@@ -30,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('noticas');
+        Schema::dropIfExists('tags');
     }
 };
