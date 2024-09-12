@@ -10,5 +10,4 @@
   <h1 class="text-red-500 bg-black p-4 rounded lg">
     Hello world!
   </h1>
-</body>
 </html>
